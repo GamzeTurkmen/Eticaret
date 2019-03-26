@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ETicaretProje.Models.SiparisKalem>
+@{
+    ViewBag.Title = "SiparisDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SiparisDetay</h2>
+
+<div class="jumbotron">
+    <h1>Sipariş Detayı</h1>
+</div>
+<table class="table">
+    <tr>
+        <th>Adet</th>
+        <th>Toplam Tutar</th>
+        <th>Ürünler</th>
+    </tr>
+    <tr>
+        @foreach (var item in Model)
+        {
+            <td>@Html.DisplayFor(modelItem => item.Adet)</td>
+            <td>@Html.DisplayFor(modelItem => item.ToplamTutar)</td>
+            <td>@Html.DisplayFor(modelItem => item.Urunler.UrunAdi)</td>
+        }
+    </tr>
+</table>
